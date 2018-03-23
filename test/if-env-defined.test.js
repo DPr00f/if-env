@@ -3,7 +3,7 @@ var expect = require("expect");
 var path = require("path");
 
 var run = function(args) {
-  var bin = path.join(__dirname, "../bin/if-env.js");
+  var bin = path.join(__dirname, "../bin/if-env-defined.js");
 
   return child.spawnSync(bin, args);
 };
@@ -16,9 +16,9 @@ describe("if-env", function() {
       });
     });
 
-    context("with NODE_ENV=fake", function() {
-      it("should return 1", function() {
-        expect(run(["NODE_ENV=fake"]).status).toBe(1);
+    context("with NODE_ENV=any", function() {
+      it("should return 0", function() {
+        expect(run(["NODE_ENV=any"]).status).toBe(0);
       });
     });
 
@@ -27,9 +27,9 @@ describe("if-env", function() {
         expect(run(["NODE_ENV=test"]).status).toBe(0);
       });
 
-      context("and DOES_NOT_EXIST=fake", function() {
+      context("and DOES_NOT_EXIST", function() {
         it("should return 1", function() {
-          expect(run(["NODE_ENV=TEST", "DOES_NOT_EXIST=fake"]).status).toBe(1);
+          expect(run(["NODE_ENV=TEST", "DOES_NOT_EXIST"]).status).toBe(1);
         });
       });
     });
