@@ -1,8 +1,8 @@
 {
-  "name": "if-env",
+  "name": "if-env-defined",
   "version": "1.0.0",
-  "description": "Simplify npm scripts with \"if-env ... && npm run this || npm run that\"",
-  "bin": "bin/if-env.js",
+  "description": "Simplify npm scripts with \"if-env-defined ... && npm run this || npm run that\"",
+  "bin": "bin/if-env-defined.js",
   "scripts": {
     "changelog": "npm-run-all changelog:generate changelog:add",
     "changelog:add": "git add CHANGELOG.md",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericclemmons/if-env.git"
+    "url": "git+https://github.com/DPr00f/if-env.git"
   },
   "keywords": [
     "npm",
@@ -26,12 +26,12 @@
     "if",
     "run"
   ],
-  "author": "Eric Clemmons <eric@smarterspam.com>",
+  "author": "Joao Lopes <jocolopes@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ericclemmons/if-env/issues"
+    "url": "https://github.com/DPr00f/if-env/issues"
   },
-  "homepage": "https://github.com/ericclemmons/if-env#readme",
+  "homepage": "https://github.com/DPr00f/if-env#readme",
   "devDependencies": {
     "expect": "1.13.4",
     "mocha": "2.3.4"
